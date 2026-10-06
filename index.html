@@ -1,282 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Project - A modern, beautiful landing page showcasing creativity and innovation.">
-    <title>My Project | Modern Landing Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petal & Polish · Studio Nail Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdf1f5;--bg2:#f9e3ec;--card:#f6cddb;--peach:#f1dbef;--accent:#c4457a;--accent2:#b79ad6;--text:#3d2f3a;--muted:#7b6475;--shadow:0 10px 30px rgba(196,69,122,.14);--r:32px;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b1f27;--bg2:#35262f;--card:#4d3345;--peach:#5a3d52;--accent:#ec8fb5;--accent2:#c3a8e0;--text:#f7e8ef;--muted:#cbb5c3;--shadow:0 10px 30px rgba(0,0,0,.3)}}
+:root[data-theme="dark"]{--bg:#2b1f27;--bg2:#35262f;--card:#4d3345;--peach:#5a3d52;--accent:#ec8fb5;--accent2:#c3a8e0;--text:#f7e8ef;--muted:#cbb5c3;--shadow:0 10px 30px rgba(0,0,0,.3)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font-family:Nunito,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.brand,.slide p{font-family:Fraunces,Georgia,serif;font-weight:600}
+.btn{font-family:Quicksand,Nunito,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px;line-height:1.2}
+.sub{color:var(--muted);max-width:480px;margin-bottom:48px}
+.eyebrow{display:inline-block;background:var(--peach);padding:6px 16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:16px 32px;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;box-shadow:0 8px 20px rgba(196,69,122,.35);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--text);box-shadow:none;border:2px solid var(--accent2)}
+nav{position:sticky;top:0;z-index:10;padding:14px 0;padding-top:calc(14px + env(safe-area-inset-top,0px))}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);border-radius:999px;padding:10px 12px 10px 24px;box-shadow:var(--shadow)}
+.brand{font-weight:700;font-size:20px}
+nav .links{display:flex;gap:26px;align-items:center}
+nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+nav .btn{padding:10px 22px;color:#fff;font-size:14px}
+@media(max-width:700px){nav .links a:not(.btn){display:none}}
+/* hero */
+.hero{padding:48px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.1;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--accent)}
+.hero p{color:var(--muted);font-size:18px;max-width:440px;margin-bottom:32px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.stage{position:relative;aspect-ratio:1/1.05;border-radius:48% 52% 44% 56%/ 46% 44% 56% 54%;background:linear-gradient(145deg,var(--card),var(--peach));box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;gap:2.5%;padding:0 6%}
+.nail{position:relative;border-radius:46% 46% 38% 38%/52% 52% 38% 38%;box-shadow:inset 0 -6px 12px rgba(0,0,0,.08),0 6px 14px rgba(150,60,100,.2);overflow:hidden;flex:none}
+.nail::after{content:"";position:absolute;top:8%;left:16%;width:22%;height:58%;border-radius:999px;background:linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,0));transform:rotate(4deg)}
+.nail.french::before{content:"";position:absolute;top:0;left:0;right:0;height:26%;background:#fbf6ee}
+.nail.chrome{background:linear-gradient(135deg,#fbe6ef,#c9a0bb 45%,#f7dcea 70%,#b88aa8)!important}
+.nail.dots::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,#fff9 0 8%,transparent 9%),radial-gradient(circle at 68% 52%,#fff9 0 8%,transparent 9%),radial-gradient(circle at 36% 78%,#fff9 0 8%,transparent 9%)}
+.nail.charm::before{content:"";position:absolute;left:50%;top:62%;width:34%;aspect-ratio:1;transform:translate(-50%,-50%) rotate(45deg);border-radius:30%;background:linear-gradient(135deg,#fff,#e9c7b3);box-shadow:0 2px 4px rgba(0,0,0,.2)}
+.nail.swirl::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 100%,#fff7 0 30%,transparent 31%),radial-gradient(ellipse at 90% 30%,#fff5 0 25%,transparent 26%)}
+.stage .nail{width:15%}
+.stage .nail:nth-child(1){height:44%;margin-top:18%}.stage .nail:nth-child(2){height:56%;margin-top:6%}.stage .nail:nth-child(3){height:62%;margin-top:0}.stage .nail:nth-child(4){height:54%;margin-top:8%}.stage .nail:nth-child(5){height:42%;margin-top:20%}
+.badge{position:absolute;background:var(--bg);border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;box-shadow:var(--shadow)}
+.badge.a{left:-4%;bottom:14%}.badge.b{right:-2%;top:10%}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.stage{max-width:440px;margin:0 auto;width:100%}.badge.a{left:0}.badge.b{right:0}}
+/* services */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.card{background:var(--card);border-radius:var(--r);padding:32px 28px;box-shadow:var(--shadow);transition:transform .25s}
+.card:hover{transform:translateY(-6px)}
+.card:nth-child(even){background:var(--peach)}
+.ico{width:56px;height:56px;border-radius:50%;background:var(--bg);display:grid;place-items:center;margin-bottom:20px}
+.ico svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.price{display:inline-block;background:var(--bg);border-radius:999px;padding:4px 14px;font-weight:700;font-size:14px}
+/* gallery */
+.gallery{background:var(--bg2);border-radius:64px 64px 0 0}
+.masonry{columns:3 220px;column-gap:20px}
+.tile{break-inside:avoid;margin-bottom:20px;border-radius:var(--r);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;gap:5%;padding:0 8%;position:relative;overflow:hidden}
+.tile .nail{width:16%;height:56%}
+.tile .nail:nth-child(odd){height:46%;margin-top:14%}
+.tile span{position:absolute;left:14px;bottom:14px;background:var(--bg);border-radius:999px;padding:4px 14px;font-size:13px;font-weight:700}
+/* testimonials */
+.slider{background:var(--card);border-radius:48px;box-shadow:var(--shadow);padding:44px 12px 28px;max-width:760px;margin:0 auto}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;padding:0 clamp(16px,6vw,56px);text-align:center}
+.slide p{font-size:clamp(17px,2.4vw,21px);font-style:italic;margin-bottom:22px}
+.who{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--muted);font-size:15px}
+.av{width:44px;height:44px;border-radius:50%;background:var(--accent2);color:#fff;display:grid;place-items:center;font-weight:700}
+.stars{color:var(--accent);letter-spacing:3px;margin-bottom:14px}
+.ctrl{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:26px}
+.ctrl button{width:44px;height:44px;border-radius:50%;border:0;background:var(--bg);color:var(--text);font-size:18px;cursor:pointer;box-shadow:var(--shadow)}
+.dots{display:flex;gap:8px}.dots i{width:10px;height:10px;border-radius:999px;background:var(--bg);transition:.3s}.dots i.on{width:26px;background:var(--accent)}
+/* footer */
+footer{background:var(--accent2);color:#3b2a3f;border-radius:64px 64px 0 0;padding:72px 0 120px}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.fcard{background:rgba(255,255,255,.35);border-radius:var(--r);padding:28px}
+.fcard h3{margin-bottom:12px}
+.fcard li{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:4px 0}
+.fcard ul{padding:0}
+.copy{text-align:center;margin-top:36px;font-size:14px;opacity:.8}
+.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:84px;height:84px;border-radius:50%;background:var(--accent);color:#fff;font-family:Quicksand,sans-serif;font-weight:700;font-size:13px;line-height:1.2;text-align:center;text-decoration:none;display:grid;place-items:center;box-shadow:0 10px 28px rgba(196,69,122,.5);z-index:20;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.fab{animation:none}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-container">
-            <a href="#" id="nav-logo" class="nav-logo">
-                <span class="logo-icon">◆</span>
-                <span class="logo-text">MyProject</span>
-            </a>
-            <ul id="nav-links" class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="nav-cta" class="btn btn-primary btn-sm">Get Started</button>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+<nav><div class="wrap"><div class="brand">🌸 Petal &amp; Polish</div><div class="links"><a href="#services">Layanan</a><a href="#gallery">Galeri</a><a href="#love">Ulasan</a><a class="btn" href="#visit">Booking</a></div></div></nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-bg">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
-            <div class="grid-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span>Now Available — Version 2.0</span>
-            </div>
-            <h1 id="hero-title" class="hero-title">
-                Build Something<br>
-                <span class="gradient-text">Extraordinary</span>
-            </h1>
-            <p id="hero-description" class="hero-description">
-                Craft stunning digital experiences with modern tools and cutting-edge technology. 
-                Transform your ideas into reality with speed, precision, and elegance.
-            </p>
-            <div class="hero-actions">
-                <a href="#features" id="hero-cta-primary" class="btn btn-primary btn-lg">
-                    Explore Features
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <a href="#about" id="hero-cta-secondary" class="btn btn-ghost btn-lg">
-                    Learn More
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number" data-target="10000">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Users</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%</span>
-                    <span class="stat-label">Uptime</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Integrations</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="hero"><div class="wrap">
+<div>
+<span class="eyebrow">✿ Studio nail art</span>
+<h1>Detail kecil, <em>aura</em> main character.</h1>
+<p>Pojok tenang buat rehat, ngeteh santai, lalu pulang bawa kuku yang bikin betah dipandangi. Harga ramah kantong mahasiswa, hasil sekelas nail artist.</p>
+<div class="cta"><a class="btn" href="#visit">Booking Sekarang</a><a class="btn ghost" href="#gallery">Lihat hasil kami</a></div>
+</div>
+<div class="stage" role="img" aria-label="Ilustrasi close-up lima kuku dengan nail art">
+<div class="nail" style="background:#e99ab8"></div>
+<div class="nail french" style="background:#f9d9e5"></div>
+<div class="nail chrome"></div>
+<div class="nail dots" style="background:#c3a8e0"></div>
+<div class="nail charm" style="background:#d66a9a"></div>
+<div class="badge a">✨ Gel tahan 3+ minggu</div><div class="badge b">☕ Teh &amp; camilan gratis</div>
+</div></div></header>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Features</span>
-                <h2 class="section-title">Everything You Need to <span class="gradient-text">Succeed</span></h2>
-                <p class="section-description">
-                    Powerful tools designed to accelerate your workflow and bring your vision to life.
-                </p>
-            </div>
-            <div class="features-grid">
-                <div id="feature-1" class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                    </div>
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized for performance with sub-millisecond response times and intelligent caching.</p>
-                </div>
-                <div id="feature-2" class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    </div>
-                    <h3>Secure by Default</h3>
-                    <p>Enterprise-grade security with end-to-end encryption and zero-knowledge architecture.</p>
-                </div>
-                <div id="feature-3" class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <h3>Scalable Infrastructure</h3>
-                    <p>Auto-scaling architecture that grows with your needs—from prototype to production.</p>
-                </div>
-                <div id="feature-4" class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                    </div>
-                    <h3>Global CDN</h3>
-                    <p>Content delivered from 200+ edge locations worldwide for blazing fast load times.</p>
-                </div>
-                <div id="feature-5" class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </div>
-                    <h3>Developer Friendly</h3>
-                    <p>Intuitive APIs, comprehensive docs, and SDKs for every major language and framework.</p>
-                </div>
-                <div id="feature-6" class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Dedicated support team available around the clock to help you every step of the way.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="services"><div class="wrap">
+<span class="eyebrow">Perawatan</span><h2>Pilih me-time kamu.</h2><p class="sub">Setiap kunjungan diawali persiapan yang lembut dan ditutup dengan hasil akhir yang mengilap.</p>
+<div class="grid">
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 21v-8a4 4 0 0 1 8 0v8M12 9V3M8 13H6M16 13h2"/></svg></div><h3>Manicure</h3><p>Pembentukan kuku, perawatan kutikula, dan pijat tangan yang menenangkan.</p><span class="price">mulai Rp95rb</span></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3c0 5-3 6-3 11a6 6 0 0 0 12 0c0-3-2-4-2-8z"/><path d="M9 20h6"/></svg></div><h3>Pedicure</h3><p>Rendam air hangat, scrub lembut, dan warna cantik yang bikin sandal makin manis.</p><span class="price">mulai Rp125rb</span></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 6 6 10a6 6 0 0 1-12 0c0-4 3-6 6-10z"/></svg></div><h3>Gel Polish</h3><p>Kilau tahan lama anti-mengelupas, dengan 60+ pilihan warna pink &amp; mauve.</p><span class="price">mulai Rp150rb</span></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></div><h3>3D Nail Art</h3><p>Charm, chrome, bunga, dan detail lukis tangan.</p><span class="price">mulai Rp199rb</span></div>
+</div></div></section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-visual">
-                    <div class="about-card-stack">
-                        <div class="floating-card card-1">
-                            <div class="card-metric">
-                                <span class="metric-value">4.9</span>
-                                <span class="metric-label">User Rating</span>
-                                <div class="stars">★★★★★</div>
-                            </div>
-                        </div>
-                        <div class="floating-card card-2">
-                            <div class="card-metric">
-                                <span class="metric-icon">📈</span>
-                                <span class="metric-label">Growth</span>
-                                <span class="metric-value">+340%</span>
-                            </div>
-                        </div>
-                        <div class="floating-card card-3">
-                            <div class="card-metric">
-                                <span class="metric-icon">🚀</span>
-                                <span class="metric-label">Deployed</span>
-                                <span class="metric-value">1M+</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <span class="section-tag">About Us</span>
-                    <h2 class="section-title">Built for the <span class="gradient-text">Future</span></h2>
-                    <p class="about-text">
-                        We believe in creating tools that empower developers and businesses to build without limits. 
-                        Our platform combines cutting-edge technology with thoughtful design to deliver an unparalleled experience.
-                    </p>
-                    <ul class="about-checklist">
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Open-source core with enterprise features</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Built-in analytics and monitoring</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Seamless CI/CD pipeline integration</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Multi-cloud deployment support</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" id="about-cta" class="btn btn-primary">Start Building Today</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="gallery" class="gallery"><div class="wrap">
+<span class="eyebrow">Portofolio</span><h2>Baru banget selesai.</h2><p class="sub">Intip hasil terbaru dari para artist kami. Screenshot desain favoritmu dan bawa ke sini ya!</p>
+<div class="masonry" id="mason"></div>
+</div></section>
 
-    <!-- Contact / CTA Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-content">
-                    <span class="section-tag">Get in Touch</span>
-                    <h2 class="section-title">Ready to Get <span class="gradient-text">Started?</span></h2>
-                    <p class="section-description">
-                        Join thousands of developers and teams already building amazing things.
-                    </p>
-                </div>
-                <form id="contact-form" class="contact-form" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
-                    </div>
-                    <button type="submit" id="contact-submit" class="btn btn-primary btn-lg btn-full">
-                        Send Message
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+<section id="love"><div class="wrap">
+<div style="text-align:center"><span class="eyebrow">Kata mereka</span><h2>Disukai pelanggan setia.</h2><p class="sub" style="margin:0 auto 40px">Cerita asli dari mahasiswa dan pekerja muda.</p></div>
+<div class="slider"><div class="track" id="track">
+<div class="slide"><div class="stars">★★★★★</div><p>"Bikin tenang banget! Gel-ku awet sampai UAS dan liburan ke pantai. Udah booking lagi buat bulan depan."</p><div class="who"><div class="av">A</div>Alya, mahasiswa</div></div>
+<div class="slide"><div class="stars">★★★★★</div><p>"Set bunga 3D-nya banyak dipuji temen kantor. Worth it banget!"</p><div class="who"><div class="av" style="background:var(--accent)">R</div>Rina, staf marketing</div></div>
+<div class="slide"><div class="stars">★★★★★</div><p>"Ramah, nggak pernah maksa, tehnya juga enak. Tempat langgananku buat me-time tiap bulan."</p><div class="who"><div class="av">S</div>Salsa, desainer</div></div>
+</div>
+<div class="ctrl"><button id="prev" aria-label="Sebelumnya">←</button><div class="dots" id="dots"></div><button id="next" aria-label="Berikutnya">→</button></div></div>
+</div></section>
 
-    <!-- Footer -->
-    <footer id="footer" class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="nav-logo">
-                        <span class="logo-icon">◆</span>
-                        <span class="logo-text">MyProject</span>
-                    </a>
-                    <p>Building the future, one line of code at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Changelog</a></li>
-                        <li><a href="#">Documentation</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="#">Twitter / X</a></li>
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Discord</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MyProject. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<footer id="visit"><div class="wrap">
+<div style="text-align:center;margin-bottom:40px"><h2>Siap manjain diri?</h2><a class="btn" href="#" style="background:#3d2f3a">Booking via WhatsApp</a></div>
+<div class="cols">
+<div class="fcard"><h3>Jam buka</h3><ul><li><span>Senin – Jumat</span><span>10.00 – 20.00 WIB</span></li><li><span>Sabtu</span><span>09.00 – 21.00 WIB</span></li><li><span>Minggu</span><span>11.00 – 18.00 WIB</span></li></ul></div>
+<div class="fcard"><h3>Lokasi kami</h3><p>Jl. Melati Raya No. 12, Kompleks Taman Asri<br>Lantai 2, sebelah kedai teh</p><p style="margin-top:10px">halo@petalpolish.id<br>@petalandpolish.id</p></div>
+</div>
+<p class="copy">© 2026 Petal &amp; Polish. Dibuat dengan penuh cinta ✿</p>
+</div></footer>
+<a class="fab" href="#visit" aria-label="Booking jadwal">Booking<br>yuk!</a>
 
-    <script src="script.js"></script>
+<script>
+var sets=[
+["linear-gradient(160deg,#f6cddb,#f1dbef)",300,["","french","dots","chrome"],["#e99ab8","#f9d9e5","#d66a9a","#f1dbef"],"French tip"],
+["linear-gradient(160deg,#e2d3f2,#efe6f8)",220,["swirl","","charm"],["#b79ad6","#d3bfeb","#c4457a"],"Swirl sage"],
+["linear-gradient(160deg,#f3bfd2,#e99ab8)",260,["chrome","chrome","dots"],["","","#f7dcea"],"Chrome glaze"],
+["linear-gradient(160deg,#f1dbef,#f6cddb)",340,["charm","","charm","swirl"],["#d66a9a","#f9d9e5","#e99ab8","#f3bfd2"],"Charm 3D"],
+["linear-gradient(160deg,#efe6f8,#e2d3f2)",240,["dots","french","dots"],["#c3a8e0","#efe6f8","#d3bfeb"],"Polkadot sage"],
+["linear-gradient(160deg,#e99ab8,#f6cddb)",290,["","swirl","","french"],["#c4457a","#f3bfd2","#e99ab8","#f1dbef"],"Pink rose"]];
+var m=document.getElementById("mason");
+sets.concat(sets.slice(0,3)).forEach(function(s,i){var t=document.createElement("div");t.className="tile";t.style.background=s[0];t.style.height=(s[1]+(i>5?30:0))+"px";
+s[2].forEach(function(c,j){var n=document.createElement("div");n.className="nail "+c;if(s[3][j])n.style.background=s[3][j];t.appendChild(n)});
+var l=document.createElement("span");l.textContent=s[4];t.appendChild(l);m.appendChild(t)});
+var tr=document.getElementById("track"),sl=tr.children,d=document.getElementById("dots"),idx=0;
+for(var i=0;i<sl.length;i++){d.appendChild(document.createElement("i"))}
+function go(n){idx=(n+sl.length)%sl.length;tr.scrollTo({left:idx*tr.clientWidth,behavior:"smooth"})}
+function mark(){var k=Math.round(tr.scrollLeft/tr.clientWidth);idx=k;[].forEach.call(d.children,function(e,j){e.className=j===k?"on":""})}
+tr.addEventListener("scroll",mark);mark();
+document.getElementById("prev").onclick=function(){go(idx-1)};document.getElementById("next").onclick=function(){go(idx+1)};
+setInterval(function(){go(idx+1)},6000);
+</script>
 </body>
 </html>
